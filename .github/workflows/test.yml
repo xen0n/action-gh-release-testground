@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Test action-gh-release
+    runs-on: ubuntu-latest
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make some big artifacts for release
+        run: ./make-artifacts.sh
+      - name: Make the release
+        #uses: softprops/action-gh-release@v2
+        uses: xen0n/action-gh-release@92dffe6c28ac278510d01d723882bf82bd907f89
+        with:
+          files: ./test*
