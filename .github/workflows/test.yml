@@ -22,3 +22,4 @@ jobs:
         uses: xen0n/action-gh-release@92dffe6c28ac278510d01d723882bf82bd907f89
         with:
           files: ./test*
+          preserve_order: true  # test
