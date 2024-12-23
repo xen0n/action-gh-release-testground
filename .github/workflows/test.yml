@@ -22,7 +22,7 @@ jobs:
         run: ./make-artifacts.sh
       - name: Make the release
         #uses: softprops/action-gh-release@v2
-        uses: xen0n/action-gh-release@162867b388b80bcfc0daa13da4464c5f825bebfb
+        uses: xen0n/action-gh-release@df69d021400a17fd3eea951a479b87ef063704a3
         with:
           files: ./test*
           #preserve_order: true  # test
